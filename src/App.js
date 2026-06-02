@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
-    <div>
-      Projeto Cervejaria
-    </div>
+    <AppRoutes />
   );
 }
 
 export default App;
+ 
