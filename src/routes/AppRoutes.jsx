@@ -1,9 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "../pages/Login";
-import Home from "../pages/Home";
+import Login from "../Login";
 
-import ProtectedRoute from "../components/ProtectedRoute";
+import CrudCervejas from "../crud/CrudCervejas";
+import CrudClientes from "../crud/CrudClientes";
+import CrudPedidos from "../crud/CrudPedidos";
+import Relatorio from "../crud/Relatorio";
+
+import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
   return (
@@ -11,15 +15,39 @@ function AppRoutes() {
       <Routes>
 
         <Route path="/" element={<Login />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/sobre" element={<Sobre />} />
-        <Route path="/contato" element={<Contato />} />
-        <Route path="/produtos" element={<Produtos />} />
+
         <Route
-          path="/home"
+          path="/cervejas"
           element={
             <ProtectedRoute>
-              <Home />
+              <CrudCervejas />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/clientes"
+          element={
+            <ProtectedRoute>
+              <CrudClientes />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/pedidos"
+          element={
+            <ProtectedRoute>
+              <CrudPedidos />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/relatorio"
+          element={
+            <ProtectedRoute>
+              <Relatorio />
             </ProtectedRoute>
           }
         />
